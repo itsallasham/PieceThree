@@ -1,0 +1,20 @@
+{
+  "name": "PieceThree",
+  "version": "1.0",
+  "description": "First push of piecethree",
+  "author": "Ray Whatley - itsallasham@gmail.com",
+  "scripts": {
+    "test": "vows --spec --isolate",
+    "start": "node index.js" 
+  }, 
+
+  "dependencies": {
+    "formidable": "*",
+    
+    
+  },
+ 
+  "preferGlobal": true,
+  "private": true,
+  "license": "MIT"
+}
