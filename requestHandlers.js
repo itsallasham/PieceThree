@@ -57,6 +57,7 @@ function upload(response, request) {
 function show(response) {
 	console.log("Request handler 'show' was called.");
 	response.writeHead(200, {"Content-Type": "image/png"});
+	console.log("writing in show")
 	fs.createReadStream(__dirname + '/tmp/test.png').pipe(response);
 }
 
