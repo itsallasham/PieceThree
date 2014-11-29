@@ -35,10 +35,10 @@ function upload(response, request) {
 	form.parse(request, function(error, fields, files) {
 		console.log("parsing done");
 
-		fs.rename(files.upload.path, __dirname + "./tmp/test.png", function(error) {
+		fs.rename(files.upload.path, __dirname + '/tmp/test.png', function(error) {
 			if (error) {
-				fs.unlink(__dirname + "./tmp/test.png");
-				fs.rename(files.upload.path, __dirname + "./tmp.test.png");
+				fs.unlink(__dirname + '/tmp/test.png');
+				fs.rename(files.upload.path, __dirname + './tmp.test.png');
 			}
 	});
 

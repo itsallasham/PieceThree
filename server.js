@@ -12,7 +12,7 @@ function start(route, handle) {
 
 
 		http.createServer(onRequest).listen(process.env.PORT || 5000);
-		console.log("Broadcasting on port 8888!");
+		console.log("Broadcasting on port 5000!");
 
 }
 
