@@ -35,13 +35,16 @@ function upload(response, request) {
 	form.parse(request, function(error, fields, files) {
 		console.log("parsing done");
 
-		fs.rename(files.upload.path, __dirname + '/tmp/test.png', function(error) {
+		fs.createReadStream(files.upload.path).pipe(fs.createWriteStream(__dirname + '/tmp/test.png'));
+
+
+		/*fs.rename(files.upload.path, __dirname + '/tmp/test.png', function(error) {
 			if (error) {
 				fs.unlink(__dirname + '/tmp/test.png');
 				fs.rename(files.upload.path, __dirname + '/tmp.test.png');
 			}
 	});
-
+		*/
 	response.writeHead(200, {"Content-Type": "text/html"});
 	response.write("received image: <br/>");
 	response.write("<img src='/show' />");
@@ -49,10 +52,6 @@ function upload(response, request) {
 	});	
 
 }
-
-
-
-
 
 
 function show(response) {
