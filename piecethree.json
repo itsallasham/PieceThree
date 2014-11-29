@@ -4,14 +4,12 @@
   "description": "First push of piecethree",
   "author": "Ray Whatley - itsallasham@gmail.com",
   "scripts": {
-    "test": "vows --spec --isolate",
+    
     "start": "node index.js" 
   }, 
 
   "dependencies": {
-    "formidable": "*",
-    
-    
+    "formidable": "*",  
   },
  
   "preferGlobal": true,
