@@ -18,7 +18,7 @@ var server = http.createServer(function onReqest(req, res) {
 
 });
 
-server.listen(5000, function() {
+server.listen(process.env.PORT||5000, function() {
 	util.log('Server Listening on port 8888');
 });
 }
