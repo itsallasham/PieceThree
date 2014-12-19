@@ -1,14 +1,17 @@
-var server = require("./server");
-var router = require("./router");
-var requestHandlers = require("./requestHandlers");
+var server = require('./server');
+var router = require('./router');
+var handler = require('./handler');
 
+
+//define an associative array for hanlding
 var handle = {}
 
-handle[""] = requestHandlers.start;
-handle["/"] = requestHandlers.start;
-handle["/start"] = requestHandlers.start;
-handle["/upload"] = requestHandlers.upload;
-handle["/show"] = requestHandlers.show;
+handle["/"] = handler.start;
+handle["/start"] = handler.start;
+handle['/upload'] = handler.upload;
+handle['/view'] = handler.view;
+handle['/uploadFile'] = handler.uploadFile;
+
 
 
 server.start(router.route, handle);

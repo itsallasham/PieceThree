@@ -1,19 +1,26 @@
-var http = require("http");
-var url = require("url");
+var http = require('http');
+var util = require('util');
+var fs = require('fs');
+var path = require('path');
+var url = require('url');
 
 
 function start(route, handle) {
-	function onRequest(request, response) {
-		var pathname = url.parse(request.url).pathname;
-		console.log("Request for " + pathname + " received.");
-			route(handle, pathname, response, request);
-		}
-	
 
+var server = http.createServer(function onReqest(req, res) {
 
-		http.createServer(onRequest).listen(process.env.PORT || 5000);
-		console.log("Broadcasting on port 5000!");
+	//returns the pathname as parsed out by the url.parse method, applied to the req url
+	var pathname = url.parse(req.url).pathname;
 
+	util.log('request for ' + pathname + ' recieved.');
+
+	route(req, res, pathname, handle);
+
+});
+
+server.listen(4000, function() {
+	util.log('Server Listening on port 4000');
+});
 }
 
 exports.start = start;

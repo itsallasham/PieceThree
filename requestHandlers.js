@@ -32,11 +32,12 @@ function upload(response, request) {
 
 	var form = new formidable.IncomingForm();
 	console.log("about to parse");
-	form.parse(request, function(error, fields, files) {
-		console.log("parsing done");
 
-		fs.createReadStream(files.upload.path).pipe(fs.createWriteStream(__dirname + '/tmp/test.png'));
+			form.parse(request, function(error, fields, files) {
+			console.log("parsing done");
 
+			fs.createReadStream(files.upload.path).pipe(fs.createWriteStream(__dirname + '/tmp/test.png'));
+		
 
 		/*fs.rename(files.upload.path, __dirname + '/tmp/test.png', function(error) {
 			if (error) {
@@ -57,6 +58,7 @@ function upload(response, request) {
 function show(response) {
 	console.log("Request handler 'show' was called.");
 	response.writeHead(200, {"Content-Type": "image/png"});
+	
 	console.log("writing in show")
 	fs.createReadStream(__dirname + '/tmp/test.png').pipe(response);
 }
@@ -64,3 +66,8 @@ function show(response) {
 exports.start = start;
 exports.upload = upload; 
 exports.show = show;
+
+
+
+
+

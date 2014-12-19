@@ -1,19 +1,19 @@
-function route(handle, pathname, response, request) {
+var util = require('util');
 
-	console.log("About to route a request for " + pathname);
+function route(req, res, pathname, handle) {
+	util.log('about to route a request for ' + pathname);
 
-	if (typeof handle[pathname] === 'function') {
-		handle[pathname](response, request);
-
+	if(typeof handle [pathname] === 'function') {
+		handle[pathname](req, res, handle);
+	
 	} else {
 
-		console.log("No request handler found for " + pathname);
-		response.writeHead(404, {"Content-Type": "text/plain"});
-		response.write("404 Not found");
-		response.end();
-
+		res.writeHead(404, {'Content-Type': 'text/html'});
+		res.end('Page not found');
 	}
 
 }
+
+
 
 exports.route = route;
