@@ -18,8 +18,8 @@ var server = http.createServer(function onReqest(req, res) {
 
 });
 
-server.listen(4000, function() {
-	util.log('Server Listening on port 4000');
+server.listen(8888, function() {
+	util.log('Server Listening on port 8888');
 });
 }
 
