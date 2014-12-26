@@ -67,6 +67,6 @@ module.exports = app;
 
 
 
-app.listen(app.get('port'), function() {
+app.listen(process.env.PORT || app.get('port'), function() {
     console.log('listening for port 4000');
 });
