@@ -1,7 +1,8 @@
-var ctrl = require('../app_server/controllers/landing');
+var ctrl = require('../app_server/controllers/main');
 
 module.exports = function(app) {
-	app.get('/', ctrl.landing);
+	app.get('/about', ctrl.about);
+	app.get('/signin', ctrl.signin);
 };
 
 
