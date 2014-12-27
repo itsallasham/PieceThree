@@ -1,6 +1,12 @@
 /*get home page*/
 module.exports.home = function(req,res) {
-	res.render('index', {title: 'Piece-IIV'});
+	res.render('locations-list', {
+		title: 'Piece-IIV - Drop and Go',
+		pageHeader: {
+			title: 'Piece-IIV',
+			strapline: 'Drop and Go!'
+		}
+	});
 };
 
 /*get location info page*/

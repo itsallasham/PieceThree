@@ -1,6 +1,6 @@
 /*get landing page*/
 exports.landing = function(req, res) {
-	res.render('landing', {title: 'P-IIV'});
+	res.render('locations-list', {title: 'P-IIV'});
 };
 
 /*get about us page*/
