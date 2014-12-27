@@ -5,7 +5,27 @@ module.exports.home = function(req,res) {
 		pageHeader: {
 			title: 'Piece-IIV',
 			strapline: 'Drop and Go!'
-		}
+		},
+		sidebar: "Come help us with your mom!",
+		locations: [{
+			name: 'Starcups',
+			address: '125 High Street, Reading, RG6 1PS',
+			rating: 3,
+			facilities: ['Hot drinks', 'Food', 'Premium wifi'],
+			distance: '100m'
+		},{
+			name: 'Cafe Hero',
+			address: '125 High Street, Reading, RG6 1PS',
+			rating: 4,
+			facilities: ['Hot drinks', 'Food', 'Premium wifi'],
+			distance: '200m'
+		},{
+			name: 'Burger Queen',
+			address: '125 High Street, Reading, RG6 1PS',
+			rating: 2,
+			facilities: ['Food', 'Premium wifi'],
+			distance: '250m'
+		}]
 	});
 };
 
