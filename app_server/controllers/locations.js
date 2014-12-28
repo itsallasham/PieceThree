@@ -57,7 +57,7 @@ module.exports.locationInfo = function(req,res) {
 		}]
 	});
 
-};	
+};
 
  
 /*get add review page*/
@@ -67,6 +67,13 @@ module.exports.addReview = function(req, res) {
 		pageHeader: {
 			title: 'Add review',
 			strapline: 'Share your experience with the world'
-		}
+		},
+		locations: [{
+			name: 'Starcups',
+			address: '125 High Street, Reading, RG6 1PS',
+			rating: 3,
+			facilities: ['Hot drinks', 'Food', 'Premium wifi'],
+			distance: '100m'
+		}]
 	});
 };

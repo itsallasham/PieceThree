@@ -7,14 +7,14 @@ block content
 	.row.page-header
 		each location in locations
 			.row
-				.col-lg-6
+				.col-lg-5
 					h1= location.name
 						small &nbsp; #{pageHeader.strapline}
 	.row
 		.col-xs-12.col-md-9
 			each location in locations
 				.row
-					.col-xs-12.col-sm-4
+					.col-xs-12.col-sm-5
 						p.rating 
 							+outputRating(location.rating)
 						p= ""+ location.address
@@ -31,17 +31,17 @@ block content
 									each facility in location.facilities
 										span.label.label-warning= facility	
 										&nbsp;
-					.col-xs-12.col-sm-4.location-map
+					.col-xs-12.col-sm-5.location-map
 						.panel.panel-primary
 							.panel-heading
 								h2.panel-title Location map
 							.panel-body
 								img.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=51.455041,-0.9690884&zoom=17&size=400x350&sensor=false&markers=51.455041,-0.9690884&scale=2')
-					.col-xs-12.col-sm-4
+					.col-xs-12.col-sm-2
 						p.lead= sidebar
 
 				.row
-					.col-xs-12.col-sm-8
+					.col-xs-12.col-sm-10
 						.panel.panel-primary
 							.panel-heading
 								a.btn.btn-default.btn-xs.pull-right(href='/location/review/new') Add review
