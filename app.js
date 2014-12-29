@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sessions = require('express-session');
 var http = require('http');
-
+require('./app_server/models/db');
 
 var app = express();
 
