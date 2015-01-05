@@ -1,0 +1,104 @@
+extends layout
+
+block content
+	section#main-slider.no-margin
+		.carousel.slide
+			ol.carousel-indicators
+				li.active(data-target='#main-slider', data-slide-to='0')
+						
+				li(data-target='#main-slider', data-slide-to='1')
+
+				li(data-target='#main-slider', data-slide-to='2')
+			.carousel-inner
+				.item.active(style='background-image: url(/bootstrap/images/slider/wireFence.jpg)')
+					.container
+						.row.slide-margin
+							.col-sm-6
+								.carousel-content
+									h1.animation.animated-item-1 Lorem ipsum dolor sit amet consectetur adipisicing elit
+									h2.animation.animated-item-2 Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...
+									a.btn-slide.animation.animated-item-3(href='#') Read More
+							
+				// /.item
+				.item(style='background-image: url(/bootstrap/images/slider/beachBoots.jpg)')
+					.container
+						.row.slide-margin
+							.col-sm-6
+								.carousel-content
+									h1.animation.animated-item-1 Lorem ipsum dolor sit amet consectetur adipisicing elit
+									h2.animation.animated-item-2 Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...
+									a.btn-slide.animation.animated-item-3(href='#') Read More
+							
+				// /.item
+				.item(style='background-image: url(/bootstrap/images/slider/beachBootsHorse.jpg)')
+					.container
+						.row.slide-margin
+							.col-sm-6
+								.carousel-content
+									h1.animation.animated-item-1 Lorem ipsum dolor sit amet consectetur adipisicing elit
+									h2.animation.animated-item-2 Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...
+									a.btn-slide.animation.animated-item-3(href='#') Read More		
+				// /.item
+			// /.carousel-inner
+		// /.carousel
+		a.prev.hidden-xs(href='#main-slider', data-slide='prev')
+			i.fa.fa-chevron-left
+		a.next.hidden-xs(href='#main-slider', data-slide='next')
+			i.fa.fa-chevron-right
+	// /#main-slider
+	section#recent-works
+		.container
+			.center.wow.fadeInDown
+				h2 Signature Collections
+				p.lead
+					|	Our core collections provide masterfully built footwear for any situation
+					br
+					|	Browse our entire collection and find the perfect fit for your needs 
+			.row
+				.col-xs-12.col-sm-4.col-md-3
+					.recent-work-wrap
+						img.img-responsive(src='/bootstrap/images/portfolio/recent/mral003.jpg', alt='')
+						.overlay
+							.recent-work-inner
+								h3
+									a(href='#') Gold Buckle Collection
+								p Whether you are on the trail, deep in the muck, or at a fancy to do, this collection has you covered
+								a.preview(href='/bootstrap/images/portfolio/recent/mral003.jpg', rel='prettyPhoto')
+									i.fa.fa-eye
+										View
+				.col-xs-12.col-sm-4.col-md-3
+					.recent-work-wrap
+						img.img-responsive(src='/bootstrap/images/portfolio/recent/mhm0016.jpg', alt='')
+						.overlay
+							.recent-work-inner
+								h3
+									a(href='#') Silver Buckle Collection
+								p There is lots of stuff
+								a.preview(href='/bootstrap/images/portfolio/recent/mhm0016.jpg', rel='prettyPhoto')
+									i.fa.fa-eye
+										View
+				.col-xs-12.col-sm-4.col-md-3
+					.recent-work-wrap
+						img.img-responsive(src='/bootstrap/images/portfolio/recent/mcr0001.jpg', alt='')
+						.overlay
+							.recent-work-inner
+								h3
+									a(href='#') Red Buckle Collection
+								p There is lots of stuff
+								a.preview(href='/bootstrap/images/portfolio/recent/mcr0001.jpg', rel='prettyPhoto')
+									i.fa.fa-eye
+										View
+				.col-xs-12.col-sm-4.col-md-3
+					.recent-work-wrap
+						img.img-responsive(src='/bootstrap/images/portfolio/recent/mwp0001.jpg', alt='')
+						.overlay
+							.recent-work-inner
+								h3
+									a(href='#') Twisted X Work Boots
+								p There is lots of stuff
+								a.preview(href='/bootstrap/images/portfolio/recent/mwp0001.jpg', rel='prettyPhoto')
+									i.fa.fa-eye
+										View
+			// /.row
+		// /.container
+	// /.#recent-works

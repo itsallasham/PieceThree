@@ -1,0 +1,40 @@
+link(rel='stylesheet', href='/bootstrap/css/font-awesome.css')
+		link(rel='stylesheet', href='/bootstrap/css/animate.min.css')
+		link(rel='stylesheet', href='/bootstrap/css/prettyPhoto.css')
+		link(rel='stylesheet', href='/bootstrap/css/responsive.css')
+
+
+		<script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    img(src='/images/x-logoBlackSmall.png')
+
+
+    .top-bar
+		.row
+			.top-number	
+
+.col-sm-6.hidden-xs.animation.animated-item-4
+								.slider-img
+									img.img-responsive(src='/bootstrap/images/slider/img2.png')
+
+.col-sm-6.hidden-xs.animation.animated-item-4
+							.slider-img
+								img.img-responsive(src='/bootstrap/images/slider/img3.png')
+
+
+.col-sm-6.hidden-xs.animation.animated-item-4
+								.slider-img
+									img.img-responsive(src='/bootstrap/images/slider/img1.png')
+
+.container
+			#footer.footer
+				.container
+					.row
+						.col-xs-12
+							small &copy; Raymond L. Whatley IIV 2015
+			// /.container
