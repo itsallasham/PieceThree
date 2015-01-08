@@ -3,8 +3,8 @@ var apiOptions = {
 	server: "http://localhost:4000"
 };
 if (process.env.NODE_ENV === 'production') {
-	apiOptions.server = "http://mysterious-harbor-6340.herokuapp.com/";
-}
+	apiOptions.server = "http://mysterious-harbor-6340.herokuapp.com"
+};
 var renderDetailPage = function(req, res, locDetail) {
 	res.render('location', {
 		title: locDetail.name,
@@ -55,7 +55,7 @@ module.exports.home = function(req,res) {
 	var requestOptions, path;
 	path = '/api/locations';
 	requestOptions = {
-		url: apiOptions.server + path,
+		url : apiOptions.server + path,
 		method : "GET",
 		json : {},
 		qs : {

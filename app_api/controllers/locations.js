@@ -113,8 +113,6 @@ module.exports.locationsCreate = function(req, res) {
 };
 
 module.exports.locationsListByDistance = function(req, res) {
-	
-
 	var lng = parseFloat(req.query.lng);
 	var lat = parseFloat(req.query.lat);
 	var distance = parseFloat(req.query.maxDistance);
