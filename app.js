@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sessions = require('express-session');
 var http = require('http');
-require('./app_server/models/db');
+require('./app_api/models/db');
 
 var app = express();
 
@@ -23,11 +23,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser('your secret here'));
 
-app.use(sessions());
+//app.use(sessions());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 require('./routes')(app);
+require('./app_api/routes')(app);
 
 
 // catch 404 and forward to error handler
