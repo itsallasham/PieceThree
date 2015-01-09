@@ -3,7 +3,7 @@ var apiOptions = {
 	server: "http://localhost:4000"
 };
 if (process.env.NODE_ENV === 'production') {
-	apiOptions.server = "www.piecethree.com"
+	apiOptions.server = "piecethree.com"
 };
 var renderDetailPage = function(req, res, locDetail) {
 	res.render('location', {
