@@ -1,0 +1,787 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pic",
+				"pic"
+			],
+			[
+				"li",
+				"li	Tag"
+			],
+			[
+				"post",
+				"postDataChunk"
+			],
+			[
+				"writ",
+				"writeHead"
+			],
+			[
+				"cand",
+				"candideSuicide"
+			],
+			[
+				"Candide",
+				"CandideFrame"
+			],
+			[
+				"R",
+				"RelDimension"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "loc8r/app_api/routes/index.js",
+			"settings":
+			{
+				"buffer_size": 64,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/app_api/routes/locations.js",
+			"settings":
+			{
+				"buffer_size": 780,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/app_api/controllers/locations.js",
+			"settings":
+			{
+				"buffer_size": 4012,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/app.js",
+			"settings":
+			{
+				"buffer_size": 1704,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/Procfile",
+			"settings":
+			{
+				"buffer_size": 16,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/app_server/controllers/main.js",
+			"settings":
+			{
+				"buffer_size": 399,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "var mongoose = require('mongoose');\nvar dbURI = 'mongodb://localhost/Loc8r';\nif (process.env.NODE_ENV === 'production') {\ndbURI = process.env.MONGOLAB_URI;\n}\nmongoose.connect(dbURI);\n\nmongoose.connection.on('connected', function() {\n	console.log('Mongoose connected to ' + dbURI);\n});\n\nmongoose.connection.on('error', function(err) {\n	console.log('Mongoose connection error: ' + err);\n});\n\nmongoose.connection.on('disconnected', function() {\n	console.log('Mongoose disconnected');\n});\n\nvar gracefulShutdown = function(msg, callback) {\n	mongoose.connection.close(function () {\n		console.log('Mongoose disconnected through ' + msg);\n		callback();\n	});\n};\n\nprocess.once('SIGUSR2', function() {\n	gracefulShutdown('nodemon restart', function() {\n		process.kill(process.pid, 'SIGUSR2');\n	});\n});\n\nprocess.on('SIGINT', function() {\n	gracefulShutdown('app termination', function() {\n		process.exit(0);\n	});\n});\n\nprocess.on('SIGTERM', function() {\n	gracefulShutdown('Heroku app shutdown', function() {\n		process.exit(0);\n	});\n});\n\nrequire('./locations');",
+			"file": "loc8r/app_server/models/db.js",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 1045,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/app_api/models/locations.js",
+			"settings":
+			{
+				"buffer_size": 744,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/package.json",
+			"settings":
+			{
+				"buffer_size": 458,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/app_server/views/location.jade",
+			"settings":
+			{
+				"buffer_size": 1379,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/app_server/views/addReview.jade",
+			"settings":
+			{
+				"buffer_size": 942,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/app_server/views/layout.jade",
+			"settings":
+			{
+				"buffer_size": 935,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/app_server/views/locations-list.jade",
+			"settings":
+			{
+				"buffer_size": 674,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loc8r/app_server/views/_includes/sharedHTMLfunctions.jade",
+			"settings":
+			{
+				"buffer_size": 169,
+				"line_ending": "Unix",
+				"name": "mixin outputRating(rating)"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 96.0,
+		"selected_items":
+		[
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"package control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Bookmarks: Select All"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 121.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/vork/Documents/mNode/loc8r",
+		"/home/vork/Documents/mNode/loc8r/app_server",
+		"/home/vork/Documents/mNode/loc8r/app_server/controllers",
+		"/home/vork/Documents/mNode/loc8r/public",
+		"/home/vork/Documents/mNode/loc8r/public/bootstrap",
+		"/home/vork/Documents/mNode/loc8r/public/images",
+		"/home/vork/Documents/mNode/loc8r/public/stylesheets",
+		"/home/vork/Documents/mNode/loc8r/routes"
+	],
+	"file_history":
+	[
+		"/home/vork/Documents/mNode/loc8r/public/bootstrap/css/superhero.css",
+		"/home/vork/Documents/mNode/loc8r/public/bootstrap/css/twistedx.css",
+		"/home/vork/Documents/mNode/loc8r/app_server/views/signin.jade",
+		"/home/vork/Documents/mNode/loc8r/app_api/controllers/locations.js",
+		"/home/vork/Documents/mNode/loc8r/app_server/models/locations.js",
+		"/home/vork/Documents/mNode/loc8r/app_api/models/locations.js",
+		"/home/vork/Documents/mNode/loc8r/app_server/controllers/locations.js",
+		"/home/vork/Documents/mNode/loc8r/app_server/views/location.jade",
+		"/home/vork/Documents/mNode/loc8r/app_server/views/_includes/sharedHTMLfunctions.jade",
+		"/home/vork/Documents/mNode/loc8r/app.js",
+		"/home/vork/Documents/mNode/loc8r/app_server/controllers/locationData.js",
+		"/home/vork/Documents/mNode/loc8r/routes/locations.js",
+		"/home/vork/Documents/mNode/loc8r/app_server/controllers/main.js",
+		"/home/vork/Documents/mNode/loc8r/app_server/views/layout.jade",
+		"/home/vork/Documents/mNode/loc8r/app_server/views/locations-list.jade",
+		"/home/vork/Documents/mNode/loc8r/routes/main.js",
+		"/home/vork/Documents/mNode/loc8r/routes/users.js",
+		"/home/vork/Documents/mNode/loc8r/routes/index.js",
+		"/home/vork/Documents/mNode/mNode.sublime-project",
+		"/home/vork/Documents/NodeWork/requestHandlers.js",
+		"/home/vork/.cache/.fr-HxDtDn/app.js",
+		"/home/vork/.wine/drive_c/Program Files (x86)/World of Warcraft/Interface/AddOns/QDKP2_Config/QDKP2_Config.lua",
+		"/home/vork/Documents/NodeWork/piecethree.json",
+		"/home/vork/.wine/drive_c/Program Files (x86)/World of Warcraft/Interface/AddOns/candideSuicide/SimpleTimingLib.lua",
+		"/home/vork/.wine/drive_c/Program Files (x86)/World of Warcraft/Interface/AddOns/FirstFrame/FirstFrame.xml",
+		"/home/vork/.wine/drive_c/Program Files (x86)/World of Warcraft/Interface/AddOns/FirstFrame/FirstFrame.toc",
+		"/home/vork/.wine/drive_c/Program Files (x86)/World of Warcraft/Interface/AddOns/FirstFrame/FirstFrame.lua",
+		"/home/vork/.wine/drive_c/Program Files (x86)/World of Warcraft/Interface/AddOns/candideSuicide/candideSuicide.xml",
+		"/home/vork/.wine/drive_c/Program Files (x86)/World of Warcraft/Interface/AddOns/candideSuicide/candideSuicide.toc",
+		"/home/vork/.wine/drive_c/Program Files (x86)/World of Warcraft/Interface/AddOns/candideSuicide/candideSuicide.lua"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"end"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "loc8r/app_api/routes/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 64,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								64,
+								64
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "loc8r/app_api/routes/locations.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 780,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								259,
+								259
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "loc8r/app_api/controllers/locations.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4012,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								830,
+								830
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 11.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "loc8r/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1704,
+								1704
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "loc8r/Procfile",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 16,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16,
+								16
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "loc8r/app_server/controllers/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 399,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								399,
+								399
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "loc8r/app_server/models/db.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1045,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								183
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "loc8r/app_api/models/locations.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 744,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "loc8r/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								179,
+								179
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "loc8r/app_server/views/location.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1379,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 10,
+					"file": "loc8r/app_server/views/addReview.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 942,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								657,
+								657
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "loc8r/app_server/views/layout.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 935,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								654,
+								654
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "loc8r/app_server/views/locations-list.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								87,
+								87
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "loc8r/app_server/views/_includes/sharedHTMLfunctions.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 169,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								167,
+								167
+							]
+						],
+						"settings":
+						{
+							"auto_name": "mixin outputRating(rating)",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				0,
+				2,
+				1,
+				3
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.33,
+			0.66,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "mNode.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 337.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}
