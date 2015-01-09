@@ -1,7 +1,0 @@
-## Interface: 60000
-## Title: Candide Suicide
-## Notes: Loot Distribution System
-## Dependencies: SimpleTimingLib
-## SavedVariables: CandideVariables, CS_Channel, CS_AuctionTime,  CS_MinBid, CS_ACL
-candideSuicide.lua
-candideSuicide.xml
