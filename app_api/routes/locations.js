@@ -4,7 +4,7 @@ var ctrl = require('../controllers/locations');
 module.exports = function(app){
 
 // locations
-app.get('/api/locations', ctrl.locationsListByDistance);
+app.get('api/locations', ctrl.locationsListByDistance);
 app.post('/api/locations', ctrl.locationsCreate);
 app.get('/api/locations/:locationid', ctrl.locationsReadOne);
 app.put('/api/locations/:locationid', ctrl.locationsUpdateOne);
