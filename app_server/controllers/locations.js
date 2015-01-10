@@ -24,7 +24,7 @@ var _showError = function (req, res, status) {
 
 var renderDetailPage = function(req, res, locDetail) {
 	res.render('location', {
-		title: locDetail.name,
+		title: 'Piecethree | ' +locDetail.name,
 		pageHeader: {
 			title: locDetail.name,
 			strapline: ''
