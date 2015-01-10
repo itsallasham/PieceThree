@@ -14,7 +14,7 @@ block content
 			.col-xs-12.col-sm-6
 				.btnaddress #{location.address}
 				&nbsp
-				.panel.panel-primary
+				.panel.panel-default.panel-info
 					.panel-heading
 						h2.panel-title Opening Hours
 					.panel-body
@@ -25,27 +25,34 @@ block content
 									| Closed
 								else
 									| #{time.opening} - #{time.closing}
-				.panel.panel-primary
+				.panel.panel-default.panel-success
 					.panel-heading
-						h2.panel-title Facilities
+						h2.panel-title Yuppie Perqs.
 					.panel-body
 						each facility in location.facilities
-							span.label.label-warning= facility	
+							span.label.label-success= facility	
+							&nbsp;
+				.panel.panel-default.panel-danger
+					.panel-heading
+						h2.panel-title Warnings
+					.panel-body
+						each warning in location.warnings
+							span.label.label-danger= warning	
 							&nbsp;
 
-			.col-xs-12.col-sm-4.location-map
-				.panel.panel-primary
+			.col-xs-12.col-sm-6.col-lg-6.location-map
+				.panel.panel-default.panel-info
 					.panel-heading
 						h2.panel-title Location map
 					.panel-body
 							img.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=33.1640220,-97.1016460&zoom=9&size=400x350&sensor=false&markers=33.1640220,-97.1016460&scale=2')
-		.row
-			.col-xs-12.col-sm-4
+		
+			
 				p.lead= sidebar.callToAction
 
 		.row
-			.col-xs-12.col-sm-10
-				.panel.panel-primary
+			.col-xs-12
+				.panel.panel-default.panel-info
 					.panel-heading
 						a.btn.btn-default.btn-xs.pull-right(href='/location/review/new') Add review
 						
