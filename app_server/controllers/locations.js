@@ -64,7 +64,7 @@ module.exports.home = function(req,res) {
 			maxDistance: 30
 		}
 	};
-	console.log(requestOption.url);
+	console.log(requestOptions.url);
 	request (
 		requestOptions,
 		function(err, response, body) {
