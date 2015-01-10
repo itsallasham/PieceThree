@@ -27,10 +27,10 @@ var renderDetailPage = function(req, res, locDetail) {
 		title: locDetail.name,
 		pageHeader: {
 			title: locDetail.name,
-			strapline: 'Does it suck?'
+			strapline: ''
 		},
 		sidebar: {
-			context: 'is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.',
+			context: 'is on here because the serve sushi',
 			callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
 		},
 		location: locDetail
@@ -48,12 +48,12 @@ var renderHomepage = function(req, res, responseBody) {
 		}
 	}
 	res.render('locations-list', {
-		title: 'Piece-IIV - Drop and Go',
+		title: 'Piece-IIV',
 		pageHeader: {
 			title: 'Piece-IIV',
-			strapline: 'Drop and Go!'
+			strapline: ''
 		},
-		sidebar: "Come and check out all these places",
+		sidebar: "Of all of these locations, at least one must serve something edible.",
 		locations: responseBody,	
 		message: message
 	});
@@ -129,7 +129,7 @@ module.exports.addReview = function(req, res) {
 		title: 'Add Review',
 		pageHeader: {
 			title: 'Add review',
-			strapline: 'Share your experience with the world'
+			strapline: 'Tell has how it went down'
 		},
 		locations: [{
 			name: 'Starcups',
