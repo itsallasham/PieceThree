@@ -5,6 +5,23 @@ var apiOptions = {
 if (process.env.NODE_ENV === 'production') {
 	apiOptions.server = "http://www.piecethree.com"
 };
+
+var _showError = function (req, res, status) {
+	var title, content;
+	if(status === 404) {
+		title = "404, page not found"
+		content = "The page you seek may exist somewhere within the twisting nether, but it is not here.";
+	} else {
+		title = status + ", something's gone wrong";
+		content = "Something, somewhere, has gone just a little bit wrong.";
+	}
+	res.status(status);
+	res.render('generic-text', {
+		title: title,
+		content: content
+	});
+};
+
 var renderDetailPage = function(req, res, locDetail) {
 	res.render('location', {
 		title: locDetail.name,
@@ -59,12 +76,12 @@ module.exports.home = function(req,res) {
 		method : "GET",
 		json : {},
 		qs : {
-			lng : -0.7992599,
-			lat : 51.378091, 
+			lng : -97.1016460,
+			lat : 33.1640220, 
 			maxDistance: 30
 		}
+
 	};
-	console.log(requestOptions.url);
 	request (
 		requestOptions,
 		function(err, response, body) {
@@ -93,11 +110,15 @@ module.exports.locationInfo = function(req,res) {
 		requestOptions,
 		function(err, response, body) {
 			var data = body;
-			data.coords = {
-				lng : body.coords[0],
-				lat : body.coords[1]
-			};
-			renderDetailPage(req, res, data);
+			if(response.statusCode === 200) {
+				data.coords = {
+					lng : body.coords[0],
+					lat : body.coords[1]
+				};
+				renderDetailPage(req, res, data);
+			} else {
+			_showError(req, res, response.statusCode);
+			}
 		});
 };
 
