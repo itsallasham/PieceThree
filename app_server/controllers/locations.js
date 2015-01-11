@@ -30,7 +30,7 @@ var renderDetailPage = function(req, res, locDetail) {
 			strapline: ''
 		},
 		sidebar: {
-			context: 'is on here because the serve sushi',
+			context: 'is on here because they serve sushi',
 			callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
 		},
 		location: locDetail
