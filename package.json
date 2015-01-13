@@ -19,6 +19,8 @@
     "jade": "~1.6.0",
     "express-session": "*",
     "mongoose": "*",
-    "request": "*"
+    "request": "*",
+    "passport": "*",
+    "passport-local": "*"
   }
 }
