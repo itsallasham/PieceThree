@@ -1,6 +1,6 @@
 var ctrl = require('../controllers/locations');
 
-var ctrl = require('../controllers/locations');
+
 module.exports = function(app){
 
 // locations

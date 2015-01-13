@@ -4,8 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var sessions = require('express-session');
+var expressSession = require('express-session');
 var http = require('http');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
 require('./app_api/models/db');
 
 var app = express();
@@ -23,7 +25,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser('your secret here'));
 
-//app.use(sessions());
+app.use(expressSession({secret: 'mySecretKey'}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
