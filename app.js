@@ -7,8 +7,10 @@ var bodyParser = require('body-parser');
 var expressSession = require('express-session');
 var http = require('http');
 var passport = require('passport');
-var LocalStrategy = require('passport-local');
-require('./app_api/models/db');
+//var LocalStrategy = require('passport-local');
+var flash = require('connect-flash');
+var configDB1 = require('./app_api/models/db');
+require('./config/passport')(passport); // pass passport for configuration
 
 var app = express();
 
@@ -20,20 +22,28 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser('your secret here'));
 
-app.use(expressSession({secret: 'mySecretKey'}));
+app.use(expressSession({
+    secret: 'mySecretKey',
+    resave: true,
+    saveUninitialized: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
-app.use(express.static(path.join(__dirname, 'public')));
 
-require('./routes')(app);
+
+
+
 require('./app_api/routes')(app);
-
+require('./routes/locations')(app);
+require('./routes/main')(app, passport);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

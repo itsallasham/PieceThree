@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Loc = mongoose.model('Location');
+var Loc = mongoose.model('Location'); 
 
 var theEarth = (function(){
 	var earthRadius = 3959; // km is 6731, miles is 3959 

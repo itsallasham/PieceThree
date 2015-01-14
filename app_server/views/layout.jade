@@ -3,7 +3,8 @@ html
 	head
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		title= title
-		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		link(href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css', rel='stylesheet')
+		//link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
 		link(rel='stylesheet', href='/bootstrap/css/main.css')
 		link(rel='stylesheet', href='/bootstrap/css/font-awesome.css')
 		link(rel='stylesheet', href='/bootstrap/css/animate.min.css')
@@ -11,7 +12,8 @@ html
 		link(rel='stylesheet', href='/bootstrap/css/responsive.css')
 		link(rel='stylesheet', href='/bootstrap/css/spacelab.css')
 		link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
-
+		
+		
 	body
 		header#header
 			.top-bar
@@ -85,9 +87,9 @@ html
 				.col-sm-6
 					ul.pull-right
 						li
-							a(href='#') Home
+							a(href='/') Home
 						li
-							a(href='#') About
+							a(href='/about') About
 						li
 							a(href='#') Contact Us
 

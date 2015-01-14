@@ -42,4 +42,5 @@ process.on('SIGTERM', function() {
 	});
 });
 
+require('../../app_server/models/users');
 require('./locations');

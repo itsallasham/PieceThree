@@ -1,4 +1,4 @@
-var request = require('request');
+var request = require('request'); 
 var apiOptions = {
 	server: "http://localhost:4000"
 };
@@ -24,6 +24,7 @@ var _showError = function (req, res, status) {
 
 var renderDetailPage = function(req, res, locDetail) {
 	res.render('location', {
+		user: req.user,
 		title: 'Piecethree | ' +locDetail.name,
 		pageHeader: {
 			title: locDetail.name,
