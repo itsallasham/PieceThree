@@ -38,6 +38,8 @@ block content
 									span.omb_spanOr or
 							.row.omb_row-sm-offset-3
 								.col-xs-12.col-sm-6.center
+									if message.length
+										.alert.alert-danger= message
 									form.omb_loginForm(action='/login', autocomplete='off', method='POST')
 										.input-group
 					
