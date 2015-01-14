@@ -22,7 +22,7 @@
     "passport-local": "*",
     "request": "*",
     "serve-favicon": "~2.1.3",
-    "connect-flash": "*",
+    "connect-flash": "~0.1.1",
     "bcrypt-nodejs": "*"
   }
 }

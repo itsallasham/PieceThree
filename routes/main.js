@@ -9,17 +9,13 @@ function isLoggedIn(req, res, next) {
 module.exports = function(app, passport) {
 	app.get('/about', ctrl.about);
 	
-	app.get('/signin', function(req, res) {
+	app.get('/login', ctrl.login);
 
-        // render the page and pass in any flash data if it exists
-        res.render('signin'); 
-    });
-	app.post('/signin', passport.authenticate('local-login', {
+	app.post('/login', passport.authenticate('local-login', {
 		successRedirect: '/profile',
-		failureRedirect: '/signin',
+		failureRedirect: '/',
 		failureFlash: true
-	})
-);
+	}));
 	
 	app.get('/signup', ctrl.signup);
 	

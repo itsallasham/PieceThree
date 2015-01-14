@@ -1,17 +1,16 @@
-var passport = require('passport');
+//var passport = require('passport');
 var mongoose = require('mongoose');
-var LocalStrategy = require('passport-local');
 var request = require('request'); 
 var Luser = mongoose.model('User');
-
+require('../../routes');
 var renderSignup= function (req, res) {
 	res.render('signup', {
 		message: req.flash('signupMessage')
 	});
 };
 
-var renderSignin = function (req, res) {
-	res.render('signin', {
+var renderLogin = function (req, res) {
+	res.render('login', {
 		message: req.flash('loginMessage'),
 		user: req.user,
 		title: 'Sign In',
@@ -51,26 +50,24 @@ module.exports.signup = function(req, res) {
 
 /*POST signup page*/
 module.exports.postSignup = function(req, res, next) {
+	console.log('in postSignup');
 	passport.authenticate('local-signup', {
-        successRedirect: '/profile', // redirect to the secure profile section
-        failureRedirect: '/', // redirect back to the signup page if there is an error
-        failureFlash: true // allow flash messages
+        successRedirect : '/profile', // redirect to the secure profile section
+        failureRedirect : '/signup', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
     });
 };
 
-/*get signin page*/
-module.exports.signin = function(req,res) {
-	renderSignin(req, res);
+
+
+
+/*get login page*/
+module.exports.login = function(req,res) {
+	renderLogin(req, res);
 };
  
 /*POST signin page*/
-module.exports.postSignin = function(req, res, next) {
-	passport.authenticate('local-login', {
-		successRedirect: '/profile',
-		failureRedirect: '/login',
-		failureFlash: true
-	});
-};
+
 
 /*get signout page*/
 module.exports.signout = function(req, res, next) {

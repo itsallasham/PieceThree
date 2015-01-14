@@ -10,6 +10,8 @@ block content
 				h1
 					span.fa.fa-sign-in
 					| Signup
+				if message.length
+					.alert.alert-danger= message
 				form(action='/signup', method='post')
 					.form-group
 						label Email

@@ -38,18 +38,18 @@ block content
 									span.omb_spanOr or
 							.row.omb_row-sm-offset-3
 								.col-xs-12.col-sm-6.center
-									form.omb_loginForm(action='/signin', autocomplete='off', method='POST')
+									form.omb_loginForm(action='/login', autocomplete='off', method='POST')
 										.input-group
-											span.input-group-addon
-												i.fa.fa-user
-											input.form-control(type='text', name='username', placeholder='email address')
+					
+										i.fa.fa-user
+										input.form-control(type='text', name='email', placeholder='email address')
 										span.help-block
 										.input-group
-											span.input-group-addon
-												i.fa.fa-lock
-											input.form-control(type='password', name='password', placeholder='Password')
+										
+										i.fa.fa-lock
+										input.form-control(type='password', name='password', placeholder='Password')
 										span.help-block Password error
-									button.btn.btn-lg.btn-primary.btn-block(type='submit') Login
+										button.btn.btn-lg.btn-primary.btn-block(type='submit') Login
 						.row.omb_row-sm-offset-3
 							.col-xs-12.col-sm-6
 								p.omb_forgotPwd
