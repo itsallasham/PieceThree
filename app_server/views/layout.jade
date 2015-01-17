@@ -1,8 +1,12 @@
 doctype html
 html
-	head
-		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+	head(lang="en")
 		title= title
+		meta(http-equiv="content-type", content="text/html; charset=UTF-8")
+		meta(name="description", content="Piecethree provides nothing at all...nothing. Piecethree, w00t!")
+		meta(name="keywords", content="piecethree")
+		meta(name="author" content="Raymond L. Whatley IIV")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
 		link(href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css', rel='stylesheet')
 		//link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
 		link(rel='stylesheet', href='/bootstrap/css/main.css')
@@ -36,7 +40,7 @@ html
 											i.fa.fa-pinterest
 								.search
 										form(role='form')
-											input.search-form(type='text', autocomplete='off',placeholder='Search')                         
+											input.search-form(type='text', autocomplete='off',placeholder='Search')												 
 											i.fa.fa-search
 				// /.container
 			// /.top-bar			
@@ -81,17 +85,16 @@ html
 
 	#footer.footer
 		.container
-			.row
-				.col-sm-6
-					small &copy; Raymond L. Whatley IIV 2015
-				.col-sm-6
-					ul.pull-right
-						li
-							a(href='/') Home
-						li
-							a(href='/about') About
-						li
-							a(href='#') Contact Us
+			.col-sm-6
+				small &copy; Raymond L. Whatley IIV 2015
+			.col-sm-6
+				ul.pull-right
+					li
+						a(href='/') Home
+					li
+						a(href='/about') About
+					li
+						a(href='#') Contact Us
 
 		// /.container
 			
